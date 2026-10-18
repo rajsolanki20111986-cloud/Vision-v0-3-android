@@ -90,7 +90,12 @@ object ChatEngine {
                 .put("parts", JSONArray().put(JSONObject().put("text", sb.toString()))))
         }
         // The conversation must open with a user turn.
-        while (out.length() > 0 && out.getJSONObject(0).optString("role") != "user") out.remove(0)
+        val firstUser = groups.indexOfFirst { it.first == "user" }
+        if (firstUser < 0) return JSONArray()
+        groups.drop(firstUser).forEach { (role, sb) ->
+            out.put(JSONObject().put("role", role)
+                .put("parts", JSONArray().put(JSONObject().put("text", sb.toString()))))
+        }
         return out
     }
 
