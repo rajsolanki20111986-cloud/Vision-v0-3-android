@@ -10,10 +10,10 @@ data class Turn(val ts: Long, val source: String, val user: Boolean, val text: S
 /**
  * Vision's memory, kept as plain files so you can read and edit them:
  *   profile.md          who you are (only what you told Vision)
- *   facts/*.md          important facts
- *   routines/*.md       habits and routines
- *   projects/*.md       project notes
- *   skills/*.md         things you taught Vision to do (always read)
+ *   facts folder (.md files)          important facts
+ *   routines folder (.md files)       habits and routines
+ *   projects folder (.md files)       project notes
+ *   skills folder (.md files)         things you taught Vision to do (always read)
  *   conversation.jsonl  one shared log of voice and text messages
  */
 object MemoryStore {
