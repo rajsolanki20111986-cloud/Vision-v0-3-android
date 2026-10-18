@@ -6,7 +6,6 @@ import android.icu.util.ULocale
  * Detects the language of incoming text and tells Vision to reply in that language.
  * If friend sends in Bengali, Vision replies in Bengali.
  * If in Hindi, replies in Hindi.
- * If in Gujarati, replies in Gujarati.
  */
 object LanguageDetector {
 
